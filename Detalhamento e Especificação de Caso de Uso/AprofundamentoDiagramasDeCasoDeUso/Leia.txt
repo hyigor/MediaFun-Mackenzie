@@ -1,1 +1,1 @@
-Por conta do sistema ser bem extenso e com diversas funcionalidades, criamos novos diagramas de caso de uso para aprofundar certas partes do sistema.
+Por conta do sistema ser bem extenso e com diversas funcionalidades, além de criarmos um diagrama de caso de uso representando o sistema inteiro, decidimos criar também novos diagramas de caso de uso só que menores, aprofundando assim certas partes do sistema.
