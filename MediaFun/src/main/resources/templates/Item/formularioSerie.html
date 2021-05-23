@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <nav class="navbar navbar-expand navbar-light bg-light d-flex justify-content-between mb-3">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="/home">Home</a>
+            <a class="nav-item nav-link" href="/filmes">Filmes</a>
+            <a class="nav-item nav-link" href="/series">Series</a>
+            <a class="nav-item nav-link" href="/livros">Livros</a>
+            <a class="nav-item nav-link" href="">Amigos</a>
+            <a class="nav-item nav-link" href="">Perfil</a>
+        </div>
+    </nav>
+    <div class="jumbotron mb-0">
+        <h1 class="display-4">Novo Série</h1>
+    </div>
+    <div class="card mt-3">
+    <form class="card-body" action="/item/novaSerie" method="POST">
+        <div class="form-group">
+            <label>Titulo</label>
+            <input class="form-control" name="nomeTitulo" placeholder="Titulo da série.">
+            <small>Informe o titulo da série.</small>
+        </div>
+        <div class="form-group">
+            <label>Número de Temporadas</label>
+            <input class="form-control" name="numTemporadas" type="number" placeholder="Número de Temporadas">
+            <small>Informe o número de temporadas da série.</small>
+        </div>
+        <div class="form-group">
+            <label>Elenco</label>
+            <input class="form-control" name="elenco" placeholder="Principais atores.">
+            <small>Informe os principais atores da série, coloque seus nomes entre virgulas da seguinte forma: Adam Sandler,Scarlet Johansson</small>
+        </div>
+        <div class="form-group">
+            <label>País</label>
+            <input class="form-control" name="pais" placeholder="País da série.">
+            <small>Informe o país no qual a série pertence.</small>
+        </div>
+        <div class="form-group">
+            <label>Ano de Lançamento</label>
+            <input class="form-control" name="anoLancamento" type="number" placeholder="Ano de lançamento.">
+            <small>Informe o ano que a série foi lançada.</small>
+        </div>
+        <div class="form-group">
+            <label>Gênero</label>
+            <input class="form-control" name="genero" placeholder="Gênero da série.">
+            <small>Informe o gênero do filme.</small>
+        </div>
+        <div class="form-group">
+            <label>Imagem</label>
+            <input class="form-control" name="urlImagem" placeholder="Url da imagem da série">
+            <small>Copie a url de uma boa imagem da série.</small>
+        </div>
+        <div class="form-group">
+            <label>Sinopse</label>
+            <textarea class="form-control" name="sinopse" placeholder="Digite aqui a sinopse da série."></textarea>
+        </div>
+        <button class="btn btn-primary mt-2" type="submit">Cadastrar!</button>
+    </form>
+    </div>
+
+
+</div>
+</body>
+</html>

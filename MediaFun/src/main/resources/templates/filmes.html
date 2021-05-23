@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <title>Title</title>
+</head>
+<body>
+<div class="container">
+
+
+  <nav class="navbar navbar-expand navbar-light bg-light d-flex justify-content-between mb-3">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="/home">Home</a>
+      <a class="nav-item nav-link" href="/filmes">Filmes</a>
+      <a class="nav-item nav-link" href="/series">Series</a>
+      <a class="nav-item nav-link" href="/livros">Livros</a>
+      <a class="nav-item nav-link" href="">Amigos</a>
+      <a class="nav-item nav-link" href="">Perfil</a>
+    </div>
+    <a href="/item/escolhaTipo"><button class="btn btn-primary my-2 my-sm-0">Novo Item</button></a>
+
+
+
+  </nav>
+  <div class="jumbotron mb-0">
+    <h1 class="display-4">Filmes:</h1>
+
+  </div>
+
+  <div class="card" th:each="filme : ${filmes}">
+    <div th:text="${filme.titulo}">Titulo:</div>
+    <div th:text="${filme.diretor}">Diretor:</div>
+    <div th:text="${filme.elencoPrincipal}">Elenco Principal:</div>
+    <div th:text="${filme.duracao}">Duração do filme</div><span> Horas</span>
+    <div th:text="${filme.genero}">Genero:</div>
+    <div th:text="${filme.sinopse}">Sinopse:</div>
+    <div th:text="${filme.anoLancamento}">Ano de lançamento:</div>
+    <div>
+      <img th:src="${filme.url}" src=""/>
+    </div>
+    <div>Ver avaliações</div>
+  </div>
+</div>
+
+</body>
+</html>
