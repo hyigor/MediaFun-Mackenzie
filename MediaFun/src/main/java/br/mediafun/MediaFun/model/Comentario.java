@@ -8,15 +8,15 @@ public class Comentario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @ManyToOne
-    private Usuario usuario;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private User user;
     private String texto;
 
     @ManyToOne
     private Avaliacao avaliacao;
 
-    public Comentario(Usuario usuario, String texto){
-        this.usuario = usuario;
+    public Comentario(User user, String texto){
+        this.user = user;
         this.texto = texto;
     }
 
@@ -28,12 +28,12 @@ public class Comentario {
         this.id = id;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
+    public User getUsuario() {
+        return user;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setUsuario(User user) {
+        this.user = user;
     }
 
     public String getTexto() {

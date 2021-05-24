@@ -1,7 +1,6 @@
 package br.mediafun.MediaFun.model;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,8 +15,8 @@ public class Avaliacao {
     private Item item;
     private String textoAnalise;
 
-    @ManyToOne
-    private Usuario usuario;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private User user;
 
     @OneToMany(mappedBy = "avaliacao")
     private List<Comentario> comentarios = new ArrayList<>();
@@ -27,6 +26,10 @@ public class Avaliacao {
         this.item = item;
         this.textoAnalise = textoAnalise;
         this.nota = nota;
+    }
+
+    public Avaliacao() {
+
     }
 
     public Long getId() {

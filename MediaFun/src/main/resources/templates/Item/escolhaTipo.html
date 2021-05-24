@@ -1,34 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <title>Title</title>
-</head>
+<head th:replace="~{base :: head}"></head>
+
 <body>
-    <div class="container">
-        <nav class="navbar navbar-expand navbar-light bg-light d-flex justify-content-between mb-3">
-            <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="/home">Home</a>
-                <a class="nav-item nav-link" href="/filmes">Filmes</a>
-                <a class="nav-item nav-link" href="/series">Series</a>
-                <a class="nav-item nav-link" href="/livros">Livros</a>
-                <a class="nav-item nav-link" href="">Amigos</a>
-                <a class="nav-item nav-link" href="">Perfil</a>
+<div th:replace="~{base :: menu}"></div>
+<div th:replace="~{base :: nav}"></div>
+
+
+
+
+
+
+
+<div class="container">
+    <div th:replace="~{base :: titulo('Novo item:')}"></div>
+
+
+        <div class="card-body">
+            <h2>Qual tipo de item você deseja adicionar?</h2>
+            <div class="justify-content-between mb-3">
+                <a href="/item/formularioLivro"><button class="btn btn-primary my-2 my-sm-0">Livro</button></a>
+                <a href="/item/formularioSerie"><button class="btn btn-primary my-2 my-sm-0">Serie</button></a>
+                <a href="/item/formularioFilme"><button class="btn btn-primary my-2 my-sm-0">Filme</button></a>
             </div>
-        </nav>
-        <div class="jumbotron mb-0">
-            <h1 class="display-4">Novo Item</h1>
         </div>
 
-        <h2>Qual tipo de item você deseja adicionar?</h2>
-        <div class="justify-content-between mb-3">
-            <a href="/item/formularioLivro"><button class="btn btn-primary my-2 my-sm-0">Livro</button></a>
-            <a href="/item/formularioSerie"><button class="btn btn-primary my-2 my-sm-0">Serie</button></a>
-            <a href="/item/formularioFilme"><button class="btn btn-primary my-2 my-sm-0">Filme</button></a>
-        </div>
 
-    </div>
+
+</div>
 
 </body>
 </html>

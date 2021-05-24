@@ -21,8 +21,8 @@ public class Item implements Serializable {
     protected String tipo;
     protected String url;
 
-    @ManyToOne
-    protected Usuario usuario;
+    @ManyToOne(fetch = FetchType.LAZY)
+    protected User user;
 
     @OneToMany(mappedBy = "item")
     protected List<Avaliacao> avaliacoes = new ArrayList<>();

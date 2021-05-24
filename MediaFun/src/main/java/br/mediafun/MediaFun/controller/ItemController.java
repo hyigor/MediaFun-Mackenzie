@@ -29,17 +29,17 @@ public class ItemController {
     }
 
     @GetMapping("formularioLivro")
-    public String formularioLivro(){
+    public String formularioLivro(RequisicaoNovoLivro requisicao){
         return "item/formularioLivro";
     }
 
     @GetMapping("formularioFilme")
-    public String formularioFilme(){
+    public String formularioFilme(RequisicaoNovoFilme requisicao){
         return "item/formularioFilme";
     }
 
     @GetMapping("formularioSerie")
-    public String formularioSerie(){
+    public String formularioSerie(RequisicaoNovaSerie requisicao){
         return "item/formularioSerie";
     }
 

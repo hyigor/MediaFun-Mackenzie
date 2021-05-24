@@ -1,46 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-  <title>Title</title>
-</head>
+<head th:replace="~{base :: head}"></head>
+
 <body>
+<div th:replace="~{base :: menu}"></div>
+<div th:replace="~{base :: nav}"></div>
+
 <div class="container">
 
 
-  <nav class="navbar navbar-expand navbar-light bg-light d-flex justify-content-between mb-3">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="/home">Home</a>
-      <a class="nav-item nav-link" href="/filmes">Filmes</a>
-      <a class="nav-item nav-link" href="/series">Series</a>
-      <a class="nav-item nav-link" href="/livros">Livros</a>
-      <a class="nav-item nav-link" href="">Amigos</a>
-      <a class="nav-item nav-link" href="">Perfil</a>
+  <div th:replace="~{base :: titulo('Séries')}"></div>
+
+
+  <div class="card mb-3" th:each="serie : ${series}">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-12 col-sm-8 mb-3">
+          <div class="row">
+            <div class="col-md-5">Titulo: <span th:text="${serie.titulo}"></span></div>
+            <div class="col-md-9">Elenco príncipal: <span th:text="${serie.elencoPrincipal}"></span></div>
+            <div class="col-md-12">Número de temporadas: <span th:text="${serie.numTemporadas}"></span></div>
+            <div class="col-md-14">Gênero: <span th:text="${serie.genero}"></span></div>
+            <div class="col-md-16">Ano lançamento: <span th:text="${serie.anoLancamento}"></span></div>
+            <div class="col-md-18">Páis de origem: <span th:text="${serie.pais}"></span></div>
+          </div>
+          <div>Sinopse:</div>
+          <div th:text="${serie.sinopse}">Sinopse:</div>
+        </div>
+        <div class="col-12 col-sm-4">
+          <div>
+            <img class="img" th:src="${serie.url}" src=""/>
+          </div>
+        </div>
+      </div>
     </div>
-    <a href="/item/escolhaTipo"><button class="btn btn-primary my-2 my-sm-0">Novo Item</button></a>
-
-
-
-  </nav>
-  <div class="jumbotron mb-0">
-    <h1 class="display-4">Séries:</h1>
-
-  </div>
-
-  <div class="card" th:each="serie : ${series}">
-    <div th:text="${serie.titulo}">Titulo:</div>
-    <div th:text="${serie.elencoPrincipal}">Elenco Principal:</div>
-    <div th:text="${serie.numTemporadas}">Número de temporadas:</div>
-    <div th:text="${serie.genero}">Genero:</div>
-    <div th:text="${serie.sinopse}">Sinopse:</div>
-    <div th:text="${serie.anoLancamento}">Ano de lançamento:</div>
-    <div>
-      <img th:src="${serie.url}" src=""/>
-    </div>
-    <div>Ver avaliações</div>
   </div>
 </div>
+
+
+
+
+
+
+<!--  <div class="card" th:each="serie : ${series}">-->
+<!--    <div th:text="${serie.titulo}">Titulo:</div>-->
+<!--    <div th:text="${serie.elencoPrincipal}">Elenco Principal:</div>-->
+<!--    <div th:text="${serie.numTemporadas}">Número de temporadas:</div>-->
+<!--    <div th:text="${serie.genero}">Genero:</div>-->
+<!--    <div th:text="${serie.sinopse}">Sinopse:</div>-->
+<!--    <div th:text="${serie.anoLancamento}">Ano de lançamento:</div>-->
+<!--    <div>-->
+<!--      <img th:src="${serie.url}" src=""/>-->
+<!--    </div>-->
+<!--    <div>Ver avaliações</div>-->
+<!--  </div>-->
+<!--</div>-->
 
 </body>
 </html>

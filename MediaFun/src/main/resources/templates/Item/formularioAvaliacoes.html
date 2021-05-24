@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{base :: head}"></head>
+
+<body>
+<div th:replace="~{base :: menu}"></div>
+<div th:replace="~{base :: nav}"></div>
+
+<div class="container">
+
+  <div th:replace="~{base :: titulo('Novo Filme:')}"></div>
+
+  <div class="card mt-3" >
+    <form th:object="${requisicaoNovoFilme}" class="card-body" action="/item/novoFilme" method="POST">
+      <div class="form-group">
+        <label>Titulo</label>
+        <input th:field="*{nomeTitulo}" th:errorclass="is-invalid" class="form-control"  placeholder="Titulo do filme.">
+        <small>Informe o titulo do filme</small>
+        <div th:errors="*{nomeTitulo}">
+          Erros no nome do titulo
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Diretor</label>
+        <input th:field="*{diretor}" th:errorclass="is-invalid" class="form-control"  placeholder="Nome do diretor.">
+        <small>Informe o nome do diretor do filme.</small>
+        <div th:errors="*{diretor}">
+          Erros no nome do diretor
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Elenco</label>
+        <input th:field="*{elenco}" th:errorclass="is-invalid" class="form-control" placeholder="Principais atores.">
+        <small>Informe os principais atores do filme, coloque seus nome entre virgulas da seguinte forma: Adam Sandler,Scarlet Johansson</small>
+        <div class="invalid-feedback" th:errors="*{elenco}">
+          Erros no nome do elenco
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Duração</label>
+        <input th:field="*{duracao}" th:errorclass="is-invalid" class="form-control" type="number" placeholder="Numero de horas">
+        <small>Informe apenas o número exato de horas do filme</small>
+        <div class="invalid-feedback" th:errors="*{duracao}">
+          Erros na duracao
+        </div></div>
+      <div class="form-group">
+        <label>País</label>
+        <input th:field="*{pais}" th:errorclass="is-invalid" class="form-control" placeholder="País do filme.">
+        <small>Informe o país no qual o filme pertence.</small>
+        <div class="invalid-feedback" th:errors="*{pais}">
+          Erros no nome do pais
+        </div></div>
+      <div class="form-group">
+        <label>Ano de Lançamento</label>
+        <input th:field="*{anoLancamento}" th:errorclass="is-invalid" class="form-control" type="number" placeholder="Ano de lançamento.">
+        <small>Informe o ano que o filme foi lançado.</small>
+        <div class="invalid-feedback" th:errors="*{anoLancamento}">
+          Erros no ano de lançamento
+        </div></div>
+      <div class="form-group">
+        <label>Gênero</label>
+        <input th:field="*{genero}" th:errorclass="is-invalid" class="form-control" placeholder="Gênero do filme.">
+        <small>Informe o gênero do filme.</small>
+        <div class="invalid-feedback" th:errors="*{genero}">
+          Erros no genero
+        </div></div>
+      <div class="form-group">
+        <label>Imagem</label>
+        <input th:field="*{urlImagem}" th:errorclass="is-invalid" class="form-control" placeholder="Url da imagem do filme">
+        <small>Copie a url de uma boa imagem do filme.</small>
+        <div class="invalid-feedback" th:errors="*{urlImagem}">
+          Erros na url da imagem
+        </div></div>
+      <div class="form-group">
+        <label>Sinopse</label>
+        <textarea th:field="*{sinopse}" th:errorclass="is-invalid" class="form-control" placeholder="Digite aqui a sinopse do filme."></textarea>
+        <div class="invalid-feedback" th:errors="*{sinopse}">
+          Erros no nome na sinopse
+        </div></div>
+      <button class="btn btn-primary mt-2" type="submit">Cadastrar!</button>
+    </form>
+  </div>
+
+
+</div>
+</body>
+</html>
